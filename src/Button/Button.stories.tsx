@@ -26,9 +26,15 @@ export const Danger: Story = {
 };
 export const Outline: Story = {
   args: {
-    variant: "danger",
+    variant: "outline",
     children: "Ətraflı",
-    isLoading: false
+    isLoading: false,
+  },
+};
+export const Disabled: Story = {
+  args: {
+    children: "Disabled",
+    disabled: true,
   },
 };
 export const BigButton: Story = {
@@ -50,5 +56,12 @@ export const LoadButton: Story = {
     variant: "primary",
     children: "Yüklənir",
     isLoading: true,
+  },
+};
+export const Link: Story = {
+  args: {
+    variant: "link",
+    children: "Google-a keçid",
+    url : "https://www.google.com",
   },
 };

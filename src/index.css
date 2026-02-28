@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-* {
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: -0.02em;
+
+@theme {
+  --color-primary: #5b5fff;
+  --color-secondary: #f0f0f0;
+  --color-danger: #ff4d4d;
+  
 }

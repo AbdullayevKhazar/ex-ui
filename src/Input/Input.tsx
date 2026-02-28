@@ -175,7 +175,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                     key={idx}
                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 transition-colors"
                     onMouseDown={(e) => {
-                      e.preventDefault(); // Prevent onBlur from closing dropdown before selection
+                      e.preventDefault();
                       if (onResultSelect) onResultSelect(item);
                       setIsFocused(false);
                     }}

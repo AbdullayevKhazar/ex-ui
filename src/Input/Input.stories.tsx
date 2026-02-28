@@ -29,7 +29,6 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// 1. Standart Vəziyyətlər
 export const Default: Story = {
   args: {
     label: "Axtarış",
@@ -99,18 +98,6 @@ export const Disabled: Story = {
   },
 };
 
-export const AsyncSearchLoading: Story = {
-  args: {
-    label: "Canlı Axtarış (API Simulyasiyası)",
-    placeholder: "Nəsə yazın və 1 saniyə gözləyin...",
-    leftIcon: <Search size={18} />,
-    debounceMs: 500,
-    onAsyncSearch: async (value) => {
-      console.log("Axtarılır:", value);
-      await new Promise((resolve) => setTimeout(resolve, 500));
-    },
-  },
-};
 export const SearchInput: Story = {
   render: (args) => {
     const [results, setResults] = useState<string[]>([]);
