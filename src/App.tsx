@@ -1,49 +1,54 @@
-import { Earth, Mail } from "lucide-react";
-import { Button } from "./Button/Button";
-import { Input } from "./Input/Input";
-import axios from "axios";
-import { useState } from "react";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+} from "./Table/Table";
 
-function App() {
-  const [data, setData] = useState([]);
-  const [value, setValue] = useState("");
-  const handleSearch = async (value: string) => {
-    try {
-      const response = await axios.get(
-        `https://jsonplaceholder.typicode.com/comments?postId=${value}`,
-      );
-      setData(response.data);
-      console.log("Axtarış nəticələri:", data);
-      console.log("Axtarış nəticələri:", response.data);
-    } catch (error) {
-      console.error("Axtarış zamanı xəta baş verdi:", error);
-    }
-  };
+const users = [
+  { id: 1, name: "Əli Məmmədov", role: "Software Engineer", status: "Active" },
+  { id: 2, name: "Aygün Əliyeva", role: "Product Manager", status: "Offline" },
+  { id: 3, name: "Vəli Həsənov", role: "UI/UX Designer", status: "Active" },
+];
+
+export default function UsersTable() {
   return (
-    <div className="p-20 max-w-md mx-auto">
-      <Button
-        variant="link"
-        url="https://www.google.com"
-        leftIcon={<Earth size={14} />}
-      >
-        Salam
-      </Button>
-      <Input
-        variant="borderless"
-        label="E-Mail"
-        type="email"
-        placeholder="Mailinizi daxil edin zehmet olmazsa"
-        leftIcon={<Mail size={18} />}
-        isSearchInput={true}
-        value={value}
-        debounceMs={1000}
-        onChange={(e) => setValue(e.target.value)}
-        onAsyncSearch={handleSearch}
-        searchResults={data.map((item) => item.email)}
-        onResultSelect={(result) => setValue(result)}
-      />
+    <div className="p-6">
+      <Table variant="default">
+        <TableHeader>
+          <TableRow>
+            <TableHead>İstifadəçi Adı</TableHead>
+            <TableHead>Vəzifə</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead className="text-right">Əməliyyat</TableHead>
+          </TableRow>
+        </TableHeader>
+
+        <TableBody>
+          {users.map((user) => (
+            <TableRow key={user.id}>
+              <TableCell className="font-medium text-gray-900">
+                {user.name}
+              </TableCell>
+              <TableCell>{user.role}</TableCell>
+              <TableCell>
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    user.status === "Active"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-gray-100 text-gray-600"
+                  }`}
+                >
+                  {user.status}
+                </span>
+              </TableCell>
+              <TableCell className="text-right"></TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 }
-
-export default App;

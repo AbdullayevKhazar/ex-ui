@@ -128,7 +128,7 @@ export const SearchInput: Story = {
   },
   args: {
     label: "Ağıllı Axtarış (Dropdown ilə)",
-    placeholder: "Nəsə yazın və gözləyin...",
+    placeholder: "Nəsə yazın və gözləyin...", 
     leftIcon: <Search size={18} />,
     isSearchInput: true,
     debounceMs: 500,

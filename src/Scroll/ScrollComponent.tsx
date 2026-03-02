@@ -15,10 +15,13 @@ const ScrollComponent = ({
   ...props
 }: ScrollProps) => {
   const [visible, setVisible] = useState(false);
+  
   const base =
     "fixed flex items-center justify-center cursor-pointer opacity-80 hover:opacity-100 transition-all duration-300 hover:translate-y-[-5px] z-50";
+
   const positionClass =
     position === "right" ? "bottom-5 right-5" : "bottom-5 left-5";
+
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset >= 500) {
