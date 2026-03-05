@@ -58,10 +58,3 @@ export const LoadButton: Story = {
     isLoading: true,
   },
 };
-export const Link: Story = {
-  args: {
-    variant: "link",
-    children: "Google-a keçid",
-    url : "https://www.google.com",
-  },
-};

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ScrollComponent from "./ScrollComponent";
 import { ArrowUp } from "lucide-react";
+import { ScrollComponent } from "./ScrollComponent";
 
 const meta: Meta<typeof ScrollComponent> = {
   title: "Komponentlər/ScrollComponent",

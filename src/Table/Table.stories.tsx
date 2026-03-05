@@ -120,23 +120,20 @@ export const Small: Story = {
     variant: "default",
   },
   render: (args) => (
-    <Table {...args}>
+    <Table {...args} size="sm">
       <TableHeader>
         <TableRow>
-          {/* Context olmadığı üçün size="sm" hər bir xanaya verilməlidir */}
-          <TableHead size="sm">İstifadəçi Adı</TableHead>
-          <TableHead size="sm">Email</TableHead>
-          <TableHead size="sm">Vəzifə</TableHead>
+          <TableHead>İstifadəçi Adı</TableHead>
+          <TableHead>Email</TableHead>
+          <TableHead>Vəzifə</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {usersData.map((user) => (
           <TableRow key={user.id}>
-            <TableCell size="sm" className="font-medium">
-              {user.name}
-            </TableCell>
-            <TableCell size="sm">{user.email}</TableCell>
-            <TableCell size="sm">{user.role}</TableCell>
+            <TableCell className="font-medium">{user.name}</TableCell>
+            <TableCell>{user.email}</TableCell>
+            <TableCell>{user.role}</TableCell>
           </TableRow>
         ))}
       </TableBody>
