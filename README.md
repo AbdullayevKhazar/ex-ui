@@ -1,64 +1,181 @@
-# React + TypeScript + Vite
+# EX-UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EX-UI, **React**, **TypeScript** və **Vite** əsasında qurulmuş, fərdiləşdirilə bilən və yüksək performanslı UI komponentləri kitabxanasıdır. Komponentlərin inkişafı, sənədləşdirilməsi və vizual testi üçün **Storybook** inteqrasiya edilmişdir.
 
-Currently, two official plugins are available:
+Bu şablon Vite daxilində Fast Refresh və sərt ESLint qaydaları ilə minimal, lakin güclü bir başlanğıc təqdim edir.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## İstifadəçilər Üçün Quraşdırma
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Kitabxananı öz layihənizdə istifadə etmək üçün npm vasitəsilə quraşdırın:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install ex-ui
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Sonra komponentləri belə istifadə edə bilərsiniz:
+
+```tsx
+import { Button } from "ex-ui";
+
+function App() {
+  return <Button variant="primary">Click me</Button>;
+}
+```
+
+---
+
+# Tərtibatçılar Üçün Təlimat
+
+Kitabxana üzərində işləmək, yeni komponentlər əlavə etmək və ya mövcud olanları dəyişdirmək istəyən tərtibatçılar üçün aşağıdakı addımlar nəzərdə tutulub.
+
+---
+
+## Layihənin Kopyalanması və İşə Salınması
+
+Repozitoriyanı lokal maşınınıza kopyalayın:
+
+```bash
+git clone <sizin-repo-linkiniz>
+cd ex-ui
+```
+
+Asılılıqları quraşdırın:
+
+```bash
+npm install
+```
+
+---
+
+# Əsas Skriptlər
+
+Layihəni inkişaf etdirmək üçün əsas mühitlər:
+
+### Development
+
+```bash
+npm run dev
+```
+
+Vite test mühitini işə salır. Bu, komponentlərinizi standart veb tətbiqi daxilində necə göründüyünü yoxlamaq üçündür.
+
+### Storybook
+
+```bash
+npm run storybook
+```
+
+Storybook interfeysini işə salır. Yeni komponentlər yazarkən onların fərqli vəziyyətlərini (states) izolyasiya olunmuş formada görmək və sənədləşdirmək üçün istifadə edilir.
+
+### Build
+
+```bash
+npm run build
+```
+
+Kitabxananı istehsalat (production) üçün paketləyir.
+
+### Lint
+
+```bash
+npm run lint
+```
+
+ESLint vasitəsilə kod keyfiyyətini yoxlayır.
+
+---
+
+# Yeni Komponentin Yaradılması və Storybook
+
+Hər bir yeni komponent öz qovluğunda yerləşməli və daxilində məntiq (komponent faylı), stillər və Storybook sənədləşdirməsi olmalıdır.
+
+## Komponentin Fayl Strukturu
+
+```
+src/
+  components/
+    Button/
+      Button.tsx
+      Button.stories.tsx
+      index.ts
+```
+
+---
+
+# Nümunə: Button.stories.tsx
+
+Yeni yazılan komponentin Storybook-da sənədləşdirilməsi üçün Component Story Format (CSF) istifadə edilir:
+
+```ts
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './Button';
+
+const meta: Meta<typeof Button> = {
+  title: 'UI/Button',
+  component: Button,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'danger'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Davam et',
+    disabled: false,
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'Ləğv et',
+  },
+};
+```
+
+---
+
+# React Compiler
+
+Hazırda React Compiler inkişaf və build performansına təsirinə görə bu şablonda aktivləşdirilməyib. Onu əlavə etmək istəsəniz, rəsmi React Compiler sənədləşdirməsinə baxa bilərsiniz.
+
+---
+
+# ESLint və Tip Təhlükəsizliyi
+
+Bu layihədə kodun təmizliyini təmin etmək üçün sərt (strict) ESLint qaydaları tətbiq edilmişdir. İstehsalat səviyyəli tətbiqlər üçün type-aware lint qaydalarının aktivləşdirilməsi tövsiyə olunur.
+
+### eslint.config.js
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from 'eslint-plugin-react-x';
+import reactDom from 'eslint-plugin-react-dom';
 
 export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
       reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
@@ -66,8 +183,13 @@ export default defineConfig([
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
-])
+]);
 ```
+
+---
+
+# License
+
+MIT

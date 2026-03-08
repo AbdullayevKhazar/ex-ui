@@ -8,7 +8,7 @@ export interface ScrollProps extends React.ButtonHTMLAttributes<HTMLDivElement> 
 }
 
 export const ScrollComponent = ({
-  textSize,
+  textSize, 
   className = "",
   position = "right",
   children,
@@ -16,7 +16,7 @@ export const ScrollComponent = ({
 }: ScrollProps) => {
   const [visible, setVisible] = useState(false);
 
-  const base =
+  const base = 
     "fixed flex items-center justify-center cursor-pointer opacity-80 hover:opacity-100 transition-all duration-300 hover:translate-y-[-5px] z-50";
 
   const positionClass =
