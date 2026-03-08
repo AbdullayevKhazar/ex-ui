@@ -11,13 +11,13 @@ Bu şablon Vite daxilində Fast Refresh və sərt ESLint qaydaları ilə minimal
 Kitabxananı öz layihənizdə istifadə etmək üçün npm vasitəsilə quraşdırın:
 
 ```bash
-npm install ex-ui
+npm i @khazarabdulayev/ex-ui
 ```
 
 Sonra komponentləri belə istifadə edə bilərsiniz:
 
 ```tsx
-import { Button } from "ex-ui";
+import { Button } from "@khazarabdulayev/ex-ui";
 
 function App() {
   return <Button variant="primary">Click me</Button>;
@@ -37,7 +37,7 @@ Kitabxana üzərində işləmək, yeni komponentlər əlavə etmək və ya mövc
 Repozitoriyanı lokal maşınınıza kopyalayın:
 
 ```bash
-git clone <sizin-repo-linkiniz>
+git clone https://github.com/AbdullayevKhazar/ex-ui.git
 cd ex-ui
 ```
 
@@ -99,7 +99,6 @@ src/
     Button/
       Button.tsx
       Button.stories.tsx
-      index.ts
 ```
 
 ---
@@ -109,23 +108,23 @@ src/
 Yeni yazılan komponentin Storybook-da sənədləşdirilməsi üçün Component Story Format (CSF) istifadə edilir:
 
 ```ts
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
-  title: 'UI/Button',
+  title: "UI/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'danger'],
+      control: "select",
+      options: ["primary", "secondary", "danger"],
     },
     disabled: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 };
@@ -136,16 +135,16 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    variant: 'primary',
-    children: 'Davam et',
+    variant: "primary",
+    children: "Davam et",
     disabled: false,
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Ləğv et',
+    variant: "secondary",
+    children: "Ləğv et",
   },
 };
 ```
@@ -165,22 +164,22 @@ Bu layihədə kodun təmizliyini təmin etmək üçün sərt (strict) ESLint qay
 ### eslint.config.js
 
 ```js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       tseslint.configs.strictTypeChecked,
       tseslint.configs.stylisticTypeChecked,
-      reactX.configs['recommended-typescript'],
+      reactX.configs["recommended-typescript"],
       reactDom.configs.recommended,
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
     },

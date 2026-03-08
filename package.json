@@ -1,7 +1,10 @@
 {
-  "name": "ex-ui",
-  "version": "0.0.2",
+  "name": "@khazarabdulayev/ex-ui",
+  "version": "0.1.13",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build:css": "npx @tailwindcss/cli -i ./src/index.css -o ./dist/style.css --minify",
