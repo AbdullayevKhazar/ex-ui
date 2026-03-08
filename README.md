@@ -37,7 +37,7 @@ Kitabxana üzərində işləmək, yeni komponentlər əlavə etmək və ya mövc
 Repozitoriyanı lokal maşınınıza kopyalayın:
 
 ```bash
-git clone <sizin-repo-linkiniz>
+git clone https://github.com/AbdullayevKhazar/ex-ui.git
 cd ex-ui
 ```
 
