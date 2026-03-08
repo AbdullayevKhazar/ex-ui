@@ -99,7 +99,6 @@ src/
     Button/
       Button.tsx
       Button.stories.tsx
-      index.ts
 ```
 
 ---
