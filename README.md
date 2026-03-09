@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="bura_loqo_linkini_yazin.png" alt="EX-UI Logo" width="150" />
+![Fork necə edilir - GIF](https://res.cloudinary.com/ddxf5xcj4/image/upload/v1773062832/Gemini_Generated_Image_r4vw3wr4vw3wr4vw_axvbgk.jpg)
 
-# 🚀 EX-UI
+#  EX-UI
 
 **EX-UI**, <span style="color:#61DAFB;">**React**</span>, <span style="color:#3178C6;">**TypeScript**</span> və <span style="color:#646CFF;">**Vite**</span> əsasında qurulmuş, fərdiləşdirilə bilən və yüksək performanslı UI komponentləri kitabxanasıdır. Komponentlərin inkişafı, sənədləşdirilməsi və vizual testi üçün **Storybook** inteqrasiya edilmişdir. 🎨
 
@@ -16,7 +16,7 @@ Bu şablon Vite daxilində _Fast Refresh_ və sərt ESLint qaydaları ilə minim
 
 ---
 
-## 📦 Quraşdırma və İstifadə
+##  Quraşdırma və İstifadə
 
 Kitabxananı öz layihənizdə istifadə etmək üçün npm vasitəsilə quraşdırın:
 
@@ -44,7 +44,7 @@ Hər cür töhfənizi məmnuniyyətlə qəbul edirik! 🤝
 
 ---
 
-## 📜 Əsas Skriptlər (Scripts)
+##  Əsas Skriptlər (Scripts)
 
 Layihə ilə lokalda tanış olmaq istəyənlər üçün əsas komandalar:
 
@@ -57,7 +57,7 @@ Layihə ilə lokalda tanış olmaq istəyənlər üçün əsas komandalar:
 
 ---
 
-## ⚙️ Texniki Qeydlər
+##  Texniki Qeydlər
 
 - **React Compiler:** Hazırda inkişaf və _build_ performansına təsirinə görə bu şablonda aktivləşdirilməyib. Ehtiyac olarsa, [Rəsmi React Compiler Sənədləşdirməsinə](https://react.dev/learn/react-compiler) baxa bilərsiniz.
 - **ESLint və Tip Təhlükəsizliyi:** Layihədə kodun təmizliyini təmin etmək üçün sərt (strict) ESLint və TypeScript qaydaları tətbiq edilmişdir.
