@@ -4,7 +4,7 @@
 
 #  EX-UI
 
-**EX-UI**, <span style="color:#61DAFB;">**React**</span>, <span style="color:#3178C6;">**TypeScript**</span> və <span style="color:#646CFF;">**Vite**</span> əsasında qurulmuş, fərdiləşdirilə bilən və yüksək performanslı UI komponentləri kitabxanasıdır. Komponentlərin inkişafı, sənədləşdirilməsi və vizual testi üçün **Storybook** inteqrasiya edilmişdir. 🎨
+**EX-UI**, <span style="color:#61DAFB;">**React**</span>, <span style="color:#3178C6;">**TypeScript**</span> və <span style="color:#646CFF;">**Vite**</span> əsasında qurulmuş, fərdiləşdirilə bilən və yüksək performanslı UI komponentləri kitabxanasıdır. Komponentlərin inkişafı, sənədləşdirilməsi və vizual testi üçün **Storybook** inteqrasiya edilmişdir. 
 
 [![npm version](https://img.shields.io/npm/v/@khazarabdulayev/ex-ui.svg?style=flat-square)](https://www.npmjs.com/package/@khazarabdulayev/ex-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
