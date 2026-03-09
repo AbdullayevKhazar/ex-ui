@@ -135,5 +135,3 @@ git push origin feature/komponent-adi
 ## Aşağıdakı video sizə ətraflı PR-ın necə yaradılacağını öyrədir
 
 [![Pull Request yaratmaq - GIF](https://img.youtube.com/vi/nCKdihvneS0/0.jpg)](https://www.youtube.com/watch?v=nCKdihvneS0)
-
----
