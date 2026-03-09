@@ -1,12 +1,22 @@
-# EX-UI
+<div align="center">
 
-EX-UI, **React**, **TypeScript** və **Vite** əsasında qurulmuş, fərdiləşdirilə bilən və yüksək performanslı UI komponentləri kitabxanasıdır. Komponentlərin inkişafı, sənədləşdirilməsi və vizual testi üçün **Storybook** inteqrasiya edilmişdir.
+<img src="bura_loqo_linkini_yazin.png" alt="EX-UI Logo" width="150" />
 
-Bu şablon Vite daxilində Fast Refresh və sərt ESLint qaydaları ilə minimal, lakin güclü bir başlanğıc təqdim edir.
+# 🚀 EX-UI
+
+**EX-UI**, <span style="color:#61DAFB;">**React**</span>, <span style="color:#3178C6;">**TypeScript**</span> və <span style="color:#646CFF;">**Vite**</span> əsasında qurulmuş, fərdiləşdirilə bilən və yüksək performanslı UI komponentləri kitabxanasıdır. Komponentlərin inkişafı, sənədləşdirilməsi və vizual testi üçün **Storybook** inteqrasiya edilmişdir. 🎨
+
+[![npm version](https://img.shields.io/npm/v/@khazarabdulayev/ex-ui.svg?style=flat-square)](https://www.npmjs.com/package/@khazarabdulayev/ex-ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white)](bura_storybook_linki_yazin)
+
+</div>
+
+Bu şablon Vite daxilində _Fast Refresh_ və sərt ESLint qaydaları ilə minimal, lakin güclü bir başlanğıc təqdim edir.
 
 ---
 
-## İstifadəçilər Üçün Quraşdırma
+## 📦 Quraşdırma və İstifadə
 
 Kitabxananı öz layihənizdə istifadə etmək üçün npm vasitəsilə quraşdırın:
 
@@ -14,7 +24,7 @@ Kitabxananı öz layihənizdə istifadə etmək üçün npm vasitəsilə quraşd
 npm i @khazarabdulayev/ex-ui
 ```
 
-Sonra komponentləri belə istifadə edə bilərsiniz:
+Sonra komponentləri layihənizdə bu şəkildə istifadə edə bilərsiniz:
 
 ```tsx
 import { Button } from "@khazarabdulayev/ex-ui";
@@ -26,169 +36,34 @@ function App() {
 
 ---
 
-# Tərtibatçılar Üçün Təlimat
+## 💻 Töhfə Vermək (Contributing)
 
-Kitabxana üzərində işləmək, yeni komponentlər əlavə etmək və ya mövcud olanları dəyişdirmək istəyən tərtibatçılar üçün aşağıdakı addımlar nəzərdə tutulub.
+Biz açıq mənbə (open-source) icmasının gücünə inanırıq! Layihəni lokal maşınınızda qurmaq, yeni komponentlər əlavə etmək, test etmək və _Pull Request_ açmaq üçün ətraflı təlimatları **[CONTRIBUTING.md](CONTRIBUTING.md)** faylında tapa bilərsiniz.
 
----
-
-## Layihənin Kopyalanması və İşə Salınması
-
-Repozitoriyanı lokal maşınınıza kopyalayın:
-
-```bash
-git clone https://github.com/AbdullayevKhazar/ex-ui.git
-cd ex-ui
-```
-
-Asılılıqları quraşdırın:
-
-```bash
-npm install
-```
+Hər cür töhfənizi məmnuniyyətlə qəbul edirik! 🤝
 
 ---
 
-# Əsas Skriptlər
+## 📜 Əsas Skriptlər (Scripts)
 
-Layihəni inkişaf etdirmək üçün əsas mühitlər:
+Layihə ilə lokalda tanış olmaq istəyənlər üçün əsas komandalar:
 
-### Development
-
-```bash
-npm run dev
-```
-
-Vite test mühitini işə salır. Bu, komponentlərinizi standart veb tətbiqi daxilində necə göründüyünü yoxlamaq üçündür.
-
-### Storybook
-
-```bash
-npm run storybook
-```
-
-Storybook interfeysini işə salır. Yeni komponentlər yazarkən onların fərqli vəziyyətlərini (states) izolyasiya olunmuş formada görmək və sənədləşdirmək üçün istifadə edilir.
-
-### Build
-
-```bash
-npm run build
-```
-
-Kitabxananı istehsalat (production) üçün paketləyir.
-
-### Lint
-
-```bash
-npm run lint
-```
-
-ESLint vasitəsilə kod keyfiyyətini yoxlayır.
+| Komanda             | Təsvir                                                                                       |
+| :------------------ | :------------------------------------------------------------------------------------------- |
+| `npm run dev`       | **Vite test mühitini işə salır.**                                                            |
+| `npm run storybook` | **Storybook interfeysini işə salır.** (Komponentləri izolyasiya olunmuş şəkildə görmək üçün) |
+| `npm run build`     | **İstehsalat (production) üçün hazırlayır.**                                                 |
+| `npm run lint`      | **Kod keyfiyyətini yoxlayır.** ESLint vasitəsilə xətaları tapır.                             |
 
 ---
 
-# Yeni Komponentin Yaradılması və Storybook
+## ⚙️ Texniki Qeydlər
 
-Hər bir yeni komponent öz qovluğunda yerləşməli və daxilində məntiq (komponent faylı), stillər və Storybook sənədləşdirməsi olmalıdır.
-
-## Komponentin Fayl Strukturu
-
-```
-src/
-  components/
-    Button/
-      Button.tsx
-      Button.stories.tsx
-```
+- **React Compiler:** Hazırda inkişaf və _build_ performansına təsirinə görə bu şablonda aktivləşdirilməyib. Ehtiyac olarsa, [Rəsmi React Compiler Sənədləşdirməsinə](https://react.dev/learn/react-compiler) baxa bilərsiniz.
+- **ESLint və Tip Təhlükəsizliyi:** Layihədə kodun təmizliyini təmin etmək üçün sərt (strict) ESLint və TypeScript qaydaları tətbiq edilmişdir.
 
 ---
 
-# Nümunə: Button.stories.tsx
+## 📄 Lisenziya (License)
 
-Yeni yazılan komponentin Storybook-da sənədləşdirilməsi üçün Component Story Format (CSF) istifadə edilir:
-
-```ts
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
-
-const meta: Meta<typeof Button> = {
-  title: "UI/Button",
-  component: Button,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
-  argTypes: {
-    variant: {
-      control: "select",
-      options: ["primary", "secondary", "danger"],
-    },
-    disabled: {
-      control: "boolean",
-    },
-  },
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Button>;
-
-export const Primary: Story = {
-  args: {
-    variant: "primary",
-    children: "Davam et",
-    disabled: false,
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-    children: "Ləğv et",
-  },
-};
-```
-
----
-
-# React Compiler
-
-Hazırda React Compiler inkişaf və build performansına təsirinə görə bu şablonda aktivləşdirilməyib. Onu əlavə etmək istəsəniz, rəsmi React Compiler sənədləşdirməsinə baxa bilərsiniz.
-
----
-
-# ESLint və Tip Təhlükəsizliyi
-
-Bu layihədə kodun təmizliyini təmin etmək üçün sərt (strict) ESLint qaydaları tətbiq edilmişdir. İstehsalat səviyyəli tətbiqlər üçün type-aware lint qaydalarının aktivləşdirilməsi tövsiyə olunur.
-
-### eslint.config.js
-
-```js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      tseslint.configs.strictTypeChecked,
-      tseslint.configs.stylisticTypeChecked,
-      reactX.configs["recommended-typescript"],
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  },
-]);
-```
-
----
-
-# License
-
-MIT
+Bu layihə **[MIT](https://opensource.org/licenses/MIT)** lisenziyası altında yayımlanır.
