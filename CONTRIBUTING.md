@@ -1,45 +1,46 @@
-# 🌟 EX-UI-ya qoşulmaq (Contributing)
+# 🌟 Contributing to EX-UI
 
-**EX-UI** layihəsinə göstərdiyiniz marağa və töhfə vermək istəyinizə görə təşəkkür edirik! 💖
+Thank you for your interest in contributing to **EX-UI**! 💖
 
-İcmamızdan gələn hər bir töhfəni məmnuniyyətlə qəbul edirik. İstər bir xətanı (bug) düzəldin, istər sənədləşdirməni (documentation) inkişaf etdirin, istərsə də yeni komponentlər əlavə edin — köməyiniz bizim üçün çox dəyərlidir. ✨
+We truly appreciate every contribution from the community. Whether you fix a bug, improve the documentation, or add new components — your help is highly valuable to us. ✨
 
-Bu dokumentasiya, layihəyə necə töhfə verə biləcəyinizi addım-addım izah edir.
-
----
-
-## 🔄 Töhfə Vermə Prosesi (Workflow)
-
-Tipik töhfə vermə prosesi qısaca bu şəkildədir:
-
-**Fork** ➡️ **Clone** ➡️ **Branch Yarat** ➡️ **Kodu Yaz** ➡️ **Commit** ➡️ **Push** ➡️ **Pull Request (PR)**
+This guide explains **step by step** how you can contribute to the project.
 
 ---
 
-## 1️⃣ Repozitoriyanı Fork edin
+## 🔄 Contribution Workflow
 
-1. GitHub repozitoriyasına daxil olun:  
+The typical contribution process looks like this:
+
+**Fork** ➡️ **Clone** ➡️ **Create Branch** ➡️ **Implement Feature** ➡️ **Commit** ➡️ **Push** ➡️ **Pull Request (PR)**
+
+---
+
+## 1️⃣ Fork the Repository
+
+1. Go to the GitHub repository:  
    🔗 https://github.com/AbdullayevKhazar/ex-ui
-2. Səhifənin yuxarı sağ küncündəki **Fork** düyməsinə klikləyin.
 
-> **Qeyd:** Bu addım repozitoriyanın tam bir nüsxəsini sizin şəxsi GitHub hesabınızda yaradacaq.
+2. Click the **Fork** button in the top-right corner of the page.
 
-- **Orijinal repozitoriya:** `github.com/AbdullayevKhazar/ex-ui`
-- **Sizin forkunuz:** `github.com/SİZİN-İSTİFADƏÇİ-ADINIZ/ex-ui`
+> **Note:** This step will create a complete copy of the repository under your personal GitHub account.
 
-[![Fork necə edilir - GIF](https://img.youtube.com/vi/WVxD6SgxU2w/0.jpg)](https://www.youtube.com/watch?v=WVxD6SgxU2w)
+- **Original repository:** `github.com/AbdullayevKhazar/ex-ui`
+- **Your fork:** `github.com/YOUR-USERNAME/ex-ui`
+
+[![How to Fork - GIF](https://img.youtube.com/vi/WVxD6SgxU2w/0.jpg)](https://www.youtube.com/watch?v=WVxD6SgxU2w)
 
 ---
 
-## 2️⃣ Forkunuzu Clone edin
+## 2️⃣ Clone Your Fork
 
-Fork etdiyiniz repozitoriyanı öz kompüterinizə (local) yükləyin:
+Clone the repository you forked to your local machine:
 
 ```bash
-git clone https://github.com/SİZİN-İSTİFADƏÇİ-ADINIZ/ex-ui.git
+git clone https://github.com/YOUR-USERNAME/ex-ui.git
 ```
 
-Layihə qovluğuna daxil olun:
+Navigate into the project folder:
 
 ```bash
 cd ex-ui
@@ -47,9 +48,9 @@ cd ex-ui
 
 ---
 
-## 3️⃣ Asılılıqları (Dependencies) quraşdırın
+## 3️⃣ Install Dependencies
 
-Layihənin işləməsi üçün lazımi paketləri yükləyin:
+Install the required packages for the project to run:
 
 ```bash
 npm install
@@ -57,26 +58,26 @@ npm install
 
 ---
 
-## 4️⃣ Yeni Branch yaradın
+## 4️⃣ Create a New Branch
 
-Əlavə edəcəyiniz funksionallıq üçün mütləq yeni bir branch yaradın:
+Always create a new branch for the feature or fix you are working on:
 
 ```bash
-git checkout -b feature/komponent-adi
+git checkout -b feature/component-name
 ```
 
-**Branch adlarına dair nümunələr:**
+**Branch name examples:**
 
-- `feature/modal` _(Yeni xüsusiyyət əlavə edərkən)_
+- `feature/modal` _(when adding a new feature)_
 - `feature/tabs`
-- `fix/button-bug` _(Xəta və ya bug düzəldərkən)_
-- `docs/update-readme` _(Sənədləşdirmə işləri üçün)_
+- `fix/button-bug` _(when fixing a bug)_
+- `docs/update-readme` _(for documentation changes)_
 
 ---
 
-## 5️⃣ Funksionallığı (Feature) tətbiq edin
+## 5️⃣ Implement the Feature
 
-Layihəyə öz kodlarınızı əlavə edin və ya yeniləyin. Məsələn, yeni bir komponent yaradarkən struktur bu şəkildə olmalıdır:
+Add or update your code in the project. For example, when creating a new component, the structure should look like this:
 
 ```text
 src/components/Modal/
@@ -84,54 +85,56 @@ src/components/Modal/
 └── Modal.stories.tsx
 ```
 
-⚠️ **Kodu yazarkən diqqət yetirməli olduğunuz məqamlar:**
+⚠️ **Things to keep in mind while writing code:**
 
-- ✅ Komponent düzgün və xətasız işləməlidir.
-- ✅ **TypeScript** tipləri (types) dəqiq təyin edilməlidir.
-- ✅ Sənədləşdirmə və test üçün bir **Storybook** hekayəsi (story) əlavə edilməlidir.
-- ✅ Komponent layihənin ümumi struktur qaydalarına uyğun olmalıdır.
+- ✅ The component must work correctly without errors.
+- ✅ **TypeScript types** should be clearly defined.
+- ✅ A **Storybook story** should be added for documentation and testing.
+- ✅ The component should follow the project’s general structure and coding standards.
 
 ---
 
-## 6️⃣ Dəyişiklikləri Yadda Saxlayın (Commit)
+## 6️⃣ Commit Your Changes
 
-Yazdığınız kodları `stage` mərhələsinə keçirin və mənalı bir mesajla commit edin:
+Stage your changes and create a meaningful commit message:
 
 ```bash
 git add .
-git commit -m "feat: Modal komponenti əlavə edildi"
+git commit -m "feat: add Modal component"
 ```
 
 ---
 
-## 7️⃣ Şaxənizi Göndərin (Push)
+## 7️⃣ Push Your Branch
 
-Dəyişikliklərinizi öz GitHub forkunuza göndərin:
+Push your changes to your forked repository on GitHub:
 
 ```bash
-git push origin feature/komponent-adi
+git push origin feature/component-name
 ```
 
 ---
 
-## 8️⃣ Pull Request (PR) Açın
+## 8️⃣ Create a Pull Request (PR)
 
-1. GitHub-da öz fork etdiyiniz repozitoriyaya daxil olun.
-2. **Compare & Pull Request** düyməsinə klikləyin.
-3. Dəyişikliklərinizin aydın bir təsvirini yazın.
+1. Go to your forked repository on GitHub.
+2. Click the **Compare & Pull Request** button.
+3. Write a clear description of your changes.
 
-**Təsvir üçün Nümunə:**
+**Example description:**
 
-> Modal komponenti əlavə edildi.
+> Added a Modal component.
 >
-> **Xüsusiyyətlər:**
+> **Features:**
 >
-> - Açma/Bağlama (open/close) vəziyyəti
-> - Klaviatura əlçatanlığı (keyboard accessibility)
-> - Storybook sənədləşdirməsi
+> - Open/Close state management  
+> - Keyboard accessibility  
+> - Storybook documentation
 
-4. **Create Pull Request** düyməsinə klikləyin.
+4. Click **Create Pull Request**.
 
-## Aşağıdakı video sizə ətraflı PR-ın necə yaradılacağını öyrədir
+---
 
-[![Pull Request yaratmaq - GIF](https://img.youtube.com/vi/nCKdihvneS0/0.jpg)](https://www.youtube.com/watch?v=nCKdihvneS0)
+## The video below explains in detail how to create a Pull Request
+
+[![Create Pull Request - GIF](https://img.youtube.com/vi/nCKdihvneS0/0.jpg)](https://www.youtube.com/watch?v=nCKdihvneS0)
