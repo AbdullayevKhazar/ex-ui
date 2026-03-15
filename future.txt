@@ -1,0 +1,7 @@
+feature : 
+
+    
+slider 
+badges 
+banners
+dropdown menus 

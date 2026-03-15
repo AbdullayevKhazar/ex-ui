@@ -100,7 +100,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <div
         className={`relative flex flex-col w-full gap-1.5 ${disabled ? "opacity-50" : ""}`}
       >
-        {/* Label */}
         {label && (
           <label
             htmlFor={id}
@@ -110,7 +109,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
 
-        {/* Input Container */}
         <div
           className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[inputSize]} ${className}`}
         >
@@ -147,7 +145,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
 
-          {/* Right Section: Loader or Icon */}
           {isFetching ? (
             <Loader className="animate-spin text-blue-500" size={18} />
           ) : (
@@ -158,14 +155,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
 
-        {/* Validation/Helper Messages */}
         {error ? (
           <p className="text-xs text-red-500 mt-1 ml-1 font-medium">{error}</p>
         ) : helperText ? (
           <p className="text-xs text-gray-500 mt-1 ml-1">{helperText}</p>
         ) : null}
 
-        {/* Async Search Results Dropdown */}
         {isSearchInput && isFocused && searchResults && (
           <div className="absolute top-[calc(100%+4px)] left-0 w-full z-50 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto overflow-x-hidden">
             {searchResults.length > 0 ? (

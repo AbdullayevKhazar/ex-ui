@@ -1,9 +1,20 @@
+import { ProductBox } from "./Box/Box";
 import { Button } from "./Button/Button";
 import { Drawer } from "./Drawer/Drawer";
 
 export default function App() {
   return (
     <>
+      <ProductBox
+        title="Premium Qulaqlıq"
+        description="Aktiv səs-küy ləğvetmə (ANC) xüsusiyyətli simsiz qulaqlıq."
+        price="120.00 ₼"
+        oldPrice="180.00 ₼"
+        badge="Yeni"
+        buttonText="Səbətə əlavə et"
+        imageSrc="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
+        onActionClick={() => console.log("created")}
+      />
       <Drawer
         position="top"
         content={
