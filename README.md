@@ -159,6 +159,123 @@ export default function App() {
   );
 }
 ```
+---
+
+## 4️⃣ OTP Input Component
+
+The `Otp` component is used to capture one-time passwords (OTP) with multiple input fields. It supports auto-focus, backspace navigation, and paste handling.
+
+```tsx
+import { Otp } from "@khazarabdulayev/ex-ui";
+
+export default function App() {
+  const handleComplete = (otp: string) => {
+    console.log("OTP entered:", otp);
+  };
+
+  return (
+    <div className="p-10">
+      <Otp otpLength={6} onComplete={handleComplete} />
+    </div>
+  );
+}
+```
+
+---
+
+## 5️⃣ Modal Component
+
+The `Modal` component is used to display content in a centered overlay with smooth animations and backdrop blur. It supports closing via backdrop click or `ESC` key.
+
+```tsx
+import { useState } from "react";
+import { Button, Modal } from "@khazarabdulayev/ex-ui";
+
+export default function App() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="p-10">
+      <Button onClick={() => setOpen(true)}>Open Modal</Button>
+
+      <Modal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        title="Example Modal"
+      >
+        <p>This is modal content. You can place anything here.</p>
+      </Modal>
+    </div>
+  );
+}
+```
+
+---
+
+---
+
+## 7️⃣ ProductBox (E-commerce Card)
+
+The `ProductBox` component is designed for e-commerce use cases. It provides a clean and modern product card with image, pricing, discount badge, and action button.
+
+```tsx
+import { ProductBox } from "@khazarabdulayev/ex-ui";
+
+export default function App() {
+  return (
+    <div className="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <ProductBox
+        imageSrc="https://via.placeholder.com/300x400"
+        title="Wireless Headphones"
+        description="High quality wireless headphones with noise cancellation."
+        price="$99"
+        oldPrice="$149"
+        badge="SALE"
+        onActionClick={() => console.log("Added to cart")}
+      />
+
+      <ProductBox
+        imageSrc="https://via.placeholder.com/300x400"
+        title="Smart Watch"
+        description="Track your fitness and stay connected on the go."
+        price="$199"
+        badge="NEW"
+        onActionClick={() => console.log("Added to cart")}
+      />
+    </div>
+  );
+}
+```
+
+---
+
+### 🔧 Props
+
+| Prop            | Type                          | Description |
+|-----------------|-------------------------------|-------------|
+| `imageSrc`      | `string`                      | Product image URL |
+| `imageAlt`      | `string`                      | Alt text for image |
+| `title`         | `string`                      | Product title |
+| `description`   | `string`                      | Short description |
+| `price`         | `string \| number`            | Current price |
+| `oldPrice`      | `string \| number`            | Old price (for discount display) |
+| `badge`         | `string`                      | Badge label (e.g., SALE, NEW) |
+| `buttonText`    | `string`                      | Button text (default: "Səbətə at") |
+| `onActionClick` | `() => void`                  | Action button click handler |
+| `as`            | `React.ElementType`           | Custom root element (default: `article`) |
+
+---
+
+### 💡 Features
+
+- 🛒 E-commerce ready design  
+- 🎯 Supports discount pricing (old vs new price)  
+- 🏷️ Badge support (SALE, NEW, etc.)  
+- 🌙 Dark mode compatible  
+- ✨ Smooth hover animations  
+- 🔘 Optional action button  
+
+---
 
 ---
 
