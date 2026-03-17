@@ -37,10 +37,10 @@ export const Modal = ({
         });
       });
     } else {
-      setIsVisible(false); 
+      setIsVisible(false);
 
       const timer = setTimeout(() => {
-        setIsMounted(false); 
+        setIsMounted(false);
       }, 300);
 
       return () => clearTimeout(timer);
