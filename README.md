@@ -309,6 +309,26 @@ export default function App() {
 
 ---
 
+## Documentation
+
+View all components live:
+
+```bash
+npm run storybook
+```
+
+Opens at `http://localhost:6006`. Use it as your docs site or deploy it.
+
+### Deploy Storybook
+
+1. Build: `npm run build-storybook`
+2. Upload the `storybook-static` folder to:
+   - **Netlify** – drag & drop or connect your repo, set build command: `npm run build-storybook`, publish dir: `storybook-static`
+   - **Vercel** – `npx vercel` and set output dir to `storybook-static`
+   - **GitHub Pages** – push `storybook-static` to a `gh-pages` branch or use a GitHub Action
+
+---
+
 ## Scripts
 
 | Command              | Description                    |
