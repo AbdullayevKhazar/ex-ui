@@ -65,7 +65,7 @@ export const Drawer = ({
           />
 
           <div
-            className={`absolute bg-white shadow-2xl overflow-y-auto transition-transform duration-300 ease-in-out 
+            className={`absolute bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-2xl overflow-y-auto transition-transform duration-300 ease-in-out 
             ${drawerVariants[position]}`}
             style={{
               width: width,

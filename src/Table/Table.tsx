@@ -23,14 +23,16 @@ export const Table = forwardRef<
 >(({ className = "", variant = "default", size = "md", ...props }, ref) => (
   <div
     className={`w-full overflow-auto rounded-lg ${
-      variant !== "borderless" ? "border border-gray-200 shadow-sm" : ""
+      variant !== "borderless"
+        ? "border border-gray-200 shadow-sm dark:border-gray-700"
+        : ""
     }
         ${textSizeMap[size]}
     `}
   >
     <table
       ref={ref}
-      className={`w-full text-left text-gray-700 ${className}`}
+      className={`w-full text-left text-gray-700 dark:text-gray-200 ${className}`}
       {...props}
     />
   </div>
@@ -38,7 +40,12 @@ export const Table = forwardRef<
 
 export const TableHeader = (
   props: React.HTMLAttributes<HTMLTableSectionElement>,
-) => <thead className="bg-gray-50 border-b border-gray-200" {...props} />;
+) => (
+  <thead
+    className="bg-gray-50 border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700"
+    {...props}
+  />
+);
 
 export const TableBody = ({
   variant = "default",
@@ -49,8 +56,8 @@ export const TableBody = ({
 }) => {
   return (
     <tbody
-      className={`bg-white ${
-        variant === "striped" ? "" : "divide-y divide-gray-200"
+      className={`bg-white dark:bg-gray-950 ${
+        variant === "striped" ? "" : "divide-y divide-gray-200 dark:divide-gray-800"
       } ${className}`}
       {...props}
     />
@@ -66,14 +73,15 @@ export const TableRow = ({
 }) => {
   const rowStyle =
     variant === "striped"
-      ? "even:bg-gray-50 hover:bg-gray-100"
-      : "hover:bg-gray-50";
+      ? "even:bg-gray-50 hover:bg-gray-100 dark:even:bg-gray-900 dark:hover:bg-gray-800"
+      : "hover:bg-gray-50 dark:hover:bg-gray-900";
   return (
     <tr className={`${rowStyle} transition-colors ${className}`} {...props} />
   );
 };
 
-interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
+interface TableHeadProps
+  extends React.ThHTMLAttributes<HTMLTableHeaderCellElement> {
   size?: TableSize;
 }
 
@@ -85,7 +93,7 @@ export const TableHead = ({
 }: TableHeadProps) => {
   return (
     <th
-      className={`font-semibold text-gray-900 ${sizeMap[size]} ${className}`}
+      className={`font-semibold text-gray-900 dark:text-gray-100 ${sizeMap[size]} ${className}`}
       {...props}
     >
       {children}

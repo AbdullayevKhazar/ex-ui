@@ -31,10 +31,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantClasses = {
       primary: "bg-primary text-white hover:bg-primary/90",
-      secondary: "bg-secondary text-gray-900 hover:bg-secondary/90",
+      secondary: "bg-secondary text-white hover:bg-secondary/90",
       danger: "bg-danger text-white hover:bg-danger/90",
       outline:
-        "border-2 border-gray-200 text-gray-700 hover:border-blue-600 hover:text-blue-600",
+        "border-2 border-gray-200 text-gray-700 hover:border-blue-600 hover:text-blue-600 dark:border-gray-700 dark:text-gray-200 dark:hover:border-blue-400 dark:hover:text-blue-400",
     };
 
     const sizeClasses = {

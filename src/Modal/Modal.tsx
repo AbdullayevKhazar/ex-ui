@@ -82,7 +82,7 @@ export const Modal = ({
       />
 
       <div
-        className={`relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-2xl flex flex-col transform transition-all duration-300 ease-out ${
+        className={`relative z-10 w-full max-w-lg bg-white dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col transform transition-all duration-300 ease-out ${
           isVisible
             ? "opacity-100 translate-y-0 scale-100"
             : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -90,16 +90,16 @@ export const Modal = ({
         role="dialog"
         aria-modal="true"
       >
-        <div className="flex items-center justify-between p-5 border-b border-secondary/20">
+        <div className="flex items-center justify-between p-5 border-b border-secondary/20 dark:border-secondary/40">
           {title ? (
-            <h3 className="text-xl font-semibold text-secondary/90">{title}</h3>
+            <h3 className="text-xl font-semibold text-secondary/90 dark:text-gray-100">{title}</h3>
           ) : (
             <div />
           )}
 
           <button
             onClick={onClose}
-            className="p-1.5 text-secondary/60 hover:bg-danger/10 hover:text-danger rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-danger/20"
+            className="p-1.5 text-secondary/60 dark:text-gray-400 hover:bg-danger/10 hover:text-danger rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-danger/20"
             aria-label="Bağla"
           >
             <X size={20} />

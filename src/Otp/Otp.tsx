@@ -4,25 +4,26 @@ interface OtpProps {
   otpLength?: number;
   onComplete: (otp: string) => void;
 }
-export const Otp = ({ otpLength, onComplete, ...args }: OtpProps) => {
+export const Otp = ({ otpLength = 4, onComplete }: OtpProps) => {
   const [otpValues, setOtpValues] = useState<string[]>(
-    Array.from({ length: otpLength ? otpLength : 4 }),
+    Array.from({ length: otpLength }, () => ""),
   );
   const otpFieldsRef = useRef<HTMLInputElement[]>([]);
 
   const handleInput = (value: string, index: number) => {
-    if (value.length > 1) {
+    const digit = value.replace(/\D/g, "");
+    if (digit.length > 1) {
       return;
     }
     const newOtpValues = [...otpValues];
-    newOtpValues[index] = value;
+    newOtpValues[index] = digit;
     setOtpValues(newOtpValues);
-    if (value !== "" && index < otpValues.length - 1) {
+    if (digit !== "" && index < otpValues.length - 1) {
       otpFieldsRef.current[index + 1].focus();
     }
-    const finalOtp: string = otpValues.join("");
+    const finalOtp: string = newOtpValues.join("");
 
-    if (finalOtp?.length === otpLength) {
+    if (newOtpValues.every((digit) => digit !== "")) {
       onComplete(finalOtp);
     }
   };
@@ -48,10 +49,14 @@ export const Otp = ({ otpLength, onComplete, ...args }: OtpProps) => {
     }
     const nextFocusIndex = Math.min(
       clipBoardText.length,
-      otpLength ? otpLength : 4 - 1,
+      otpLength - 1,
     );
     otpFieldsRef.current[nextFocusIndex]?.focus();
     setOtpValues(newOtpValues);
+
+    if (newOtpValues.every((digit) => digit !== "")) {
+      onComplete(newOtpValues.join(""));
+    }
   };
 
   return (
@@ -76,7 +81,7 @@ export const Otp = ({ otpLength, onComplete, ...args }: OtpProps) => {
                 otpFieldsRef.current[index] = ref;
               }
             }}
-            className="w-12 h-14 sm:w-16 sm:h-16 flex-1 text-center text-2xl sm:text-3xl font-bold text-secondary/90 bg-white border-2 border-secondary/20 rounded-xl outline-none transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:-translate-y-1 shadow-sm hover:border-secondary/40 caret-primary placeholder:text-secondary/30"
+            className="w-12 h-14 sm:w-16 sm:h-16 flex-1 text-center text-2xl sm:text-3xl font-bold text-secondary/90 dark:text-gray-100 bg-white dark:bg-gray-900 border-2 border-secondary/20 dark:border-secondary/40 rounded-xl outline-none transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-sm hover:border-secondary/40 dark:hover:border-secondary/60 caret-primary placeholder:text-secondary/30 dark:placeholder:text-gray-500"
           />
         ))}
       </div>

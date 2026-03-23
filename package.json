@@ -1,7 +1,16 @@
 {
   "name": "@khazarabdulayev/ex-ui",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "type": "module",
+  "keywords": [
+    "exui",
+    "ui",
+    "react",
+    "ex-ui",
+    "khazarabdullayev",
+    "component library",
+    "react component library"
+  ],
   "files": [
     "dist"
   ],
@@ -12,7 +21,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest",
+    "test-storybook": "vitest --project=storybook"
   },
   "exports": {
     ".": {
@@ -31,21 +42,24 @@
     "vitest": "^4.0.18"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^5.0.1",
-    "@storybook/addon-a11y": "^10.2.19",
-    "@storybook/addon-docs": "^10.2.19",
-    "@storybook/addon-vitest": "^10.2.19",
-    "@storybook/react-vite": "^10.2.19",
+    "@chromatic-com/storybook": "^5.0.2",
+    "@storybook/addon-a11y": "^10.3.3",
+    "@storybook/addon-docs": "^10.3.3",
+    "@storybook/addon-vitest": "^10.3.3",
+    "@storybook/react-vite": "^10.3.3",
     "@tailwindcss/cli": "^4.2.1",
     "@tailwindcss/vite": "^4.2.1",
     "@types/node": "^25.3.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "storybook": "^10.2.19",
+    "eslint-plugin-storybook": "10.3.3",
+    "storybook": "^10.3.3",
     "tailwindcss": "^4.2.1",
     "tsup": "^8.5.1",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
-    "eslint-plugin-storybook": "10.2.19"
+    "playwright": "^1.58.2",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18"
   }
 }

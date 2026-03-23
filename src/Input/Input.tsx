@@ -74,18 +74,18 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const variantClasses = {
       default: `border-2 rounded-lg ring-offset-2 ${
         error
-          ? "border-red-500 focus-within:ring-2 focus-within:ring-red-200"
-          : "border-gray-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100"
+          ? "border-red-500 focus-within:ring-2 focus-within:ring-red-200 dark:border-red-400 dark:focus-within:ring-red-900/40"
+          : "border-gray-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 dark:border-gray-700 dark:focus-within:border-blue-400 dark:focus-within:ring-blue-900/40"
       }`,
       filled: `bg-gray-100 border-2 border-transparent rounded-lg ring-offset-2 ${
         error
-          ? "border-red-500"
-          : "focus-within:bg-white focus-within:border-blue-500"
+          ? "border-red-500 dark:border-red-400"
+          : "focus-within:bg-white focus-within:border-blue-500 dark:bg-gray-800 dark:focus-within:bg-gray-900 dark:focus-within:border-blue-400"
       }`,
       borderless: `border-b-2 bg-transparent rounded-none pl-1  ${
         error
-          ? "border-red-500"
-          : "border-gray-200 focus-within:border-blue-500"
+          ? "border-red-500 dark:border-red-400"
+          : "border-gray-200 focus-within:border-blue-500 dark:border-gray-700 dark:focus-within:border-blue-400"
       }`,
     };
 
@@ -103,7 +103,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={id}
-            className="text-sm font-semibold text-gray-700 ml-1"
+            className="text-sm font-semibold text-gray-700 ml-1 dark:text-gray-200"
           >
             {label}
           </label>
@@ -112,7 +112,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <div
           className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[inputSize]} ${className}`}
         >
-          {leftIcon && <span className="text-gray-400">{leftIcon}</span>}
+          {leftIcon && <span className="text-gray-400 dark:text-gray-500">{leftIcon}</span>}
 
           <input
             id={id}
@@ -123,7 +123,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             onBlur={() => setIsFocused(false)}
             className={`flex-1 min-h-full bg-transparent outline-none border-none focus:outline-none focus:ring-0 placeholder:text-gray-400 text-gray-700 ${
               disabled ? "cursor-not-allowed" : ""
-            }`}
+            } dark:text-gray-100 dark:placeholder:text-gray-500`}
             {...props}
             type={
               props.type === "password"
@@ -138,7 +138,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             <button
               type="button"
               onClick={handleClickShowPassword}
-              className="text-gray-400 hover:text-gray-600 focus:outline-none transition-colors"
+              className="text-gray-400 hover:text-gray-600 focus:outline-none transition-colors dark:text-gray-500 dark:hover:text-gray-300"
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -150,25 +150,25 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           ) : (
             rightIcon &&
             props.type !== "password" && (
-              <span className="text-gray-400">{rightIcon}</span>
+              <span className="text-gray-400 dark:text-gray-500">{rightIcon}</span>
             )
           )}
         </div>
 
         {error ? (
-          <p className="text-xs text-red-500 mt-1 ml-1 font-medium">{error}</p>
+          <p className="text-xs text-red-500 dark:text-red-400 mt-1 ml-1 font-medium">{error}</p>
         ) : helperText ? (
-          <p className="text-xs text-gray-500 mt-1 ml-1">{helperText}</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 ml-1">{helperText}</p>
         ) : null}
 
         {isSearchInput && isFocused && searchResults && (
-          <div className="absolute top-[calc(100%+4px)] left-0 w-full z-50 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto overflow-x-hidden">
+          <div className="absolute top-[calc(100%+4px)] left-0 w-full z-50 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto overflow-x-hidden dark:bg-gray-900 dark:border-gray-700">
             {searchResults.length > 0 ? (
               <ul className="flex flex-col py-1 m-0 p-0 list-none">
                 {searchResults.map((item, idx) => (
                   <li
                     key={idx}
-                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 transition-colors"
+                    className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer text-sm text-gray-700 dark:text-gray-200 transition-colors"
                     onMouseDown={(e) => {
                       e.preventDefault();
                       if (onResultSelect) onResultSelect(item);
@@ -180,7 +180,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                 ))}
               </ul>
             ) : (
-              <div className="p-4 text-sm text-gray-500 text-center">
+              <div className="p-4 text-sm text-gray-500 dark:text-gray-400 text-center">
                 No results found
               </div>
             )}

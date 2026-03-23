@@ -71,7 +71,7 @@ export const Interactive: Story = {
           yapışdıraraq test edin.
         </p>
 
-        <Otp otpLength={4} />
+        <Otp otpLength={4} onComplete={handleComplete} />
 
         {/* Yüklənmə və Nəticə vəziyyətləri */}
         <div className="mt-8 h-12 flex items-center justify-center w-full">
