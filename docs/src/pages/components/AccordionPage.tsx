@@ -1,9 +1,3 @@
-import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionHeader,
-} from "@khazarabdulayev/ex-ui";
 const AccordionPage = () => {
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-8">

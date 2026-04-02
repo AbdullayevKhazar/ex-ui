@@ -7,3 +7,4 @@ export * from "./Modal/Modal";
 export * from "./Otp/Otp";
 export * from "./theme/theme";
 export * from "./theme/ThemeToggle";
+export * from "./Accordion/Accordion";
