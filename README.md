@@ -311,13 +311,30 @@ export default function App() {
 
 ## Documentation
 
-View all components live:
+**Docs saytı (shadcn stilində):**
+
+```bash
+npm run docs
+```
+
+`http://localhost:3000` – Tam docs saytı, tərəfləmə, komponent səhifələri.
+
+**Storybook (komponent preview):**
 
 ```bash
 npm run storybook
 ```
 
-Opens at `http://localhost:6006`. Use it as your docs site or deploy it.
+`http://localhost:6006` – Komponentləri interaktiv test etmək üçün.
+
+### Docs saytını deploy et (Vercel)
+
+1. GitHub-a push edin
+2. [vercel.com](https://vercel.com) → New Project → repo seçin
+3. Build settings:
+   - **Build command:** `cd docs && npm install && npm run build`
+   - **Output directory:** `docs/dist`
+4. Deploy
 
 ### Deploy Storybook
 

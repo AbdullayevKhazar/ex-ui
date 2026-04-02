@@ -5,6 +5,5 @@ export * from "./Table/Table";
 export * from "./Scroll/ScrollComponent";
 export * from "./Modal/Modal";
 export * from "./Otp/Otp";
-export * from "./Box/Box";
 export * from "./theme/theme";
 export * from "./theme/ThemeToggle";

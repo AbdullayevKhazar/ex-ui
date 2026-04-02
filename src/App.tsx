@@ -1,60 +1,89 @@
-import { ArrowRightIcon, ShoppingCartIcon } from "lucide-react";
-import { ProductBox } from "./Box/Box";
-import { Button } from "./Button/Button";
-import { Otp } from "./Otp/Otp";
 import { ThemeProvider } from "./theme/theme";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionHeader,
+} from "./Accordion/Accordion";
 import { ThemeToggle } from "./theme/ThemeToggle";
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="system">
-      <main className="min-h-screen bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100">
-        <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col items-center justify-center gap-8 px-4 py-10">
-          <ThemeToggle />
-
-          <section className="flex gap-4 w-full rounded-2xl border border-secondary/20 bg-white p-6 shadow-sm transition-colors dark:border-secondary/30 dark:bg-gray-900">
-        
-           
-             <ProductBox
-              imageSrc="https://www.bigfootdigital.co.uk/wp-content/uploads/2020/07/image-optimisation-scaled.jpg"
-              title="Product 1"
-              price={"100 AZN"}
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              "
-              badge="New"
-              buttonText="Add to cart"
-              onActionClick={() => alert("Product 1 added to cart")}
-            />
-             <ProductBox
-              imageSrc="https://www.bigfootdigital.co.uk/wp-content/uploads/2020/07/image-optimisation-scaled.jpg"
-              title="Product 1"
-              price={"100 AZN"}
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-              "
-              badge="New"
-              buttonText="Add to cart"
-              onActionClick={() => alert("Product 1 added to cart")}
-            />
-          </section>
-          <Button
-          variant="primary"
-          size="md"
-          rounded="md"
-          isLoading={false}
-          leftIcon={<ShoppingCartIcon />}
-          rightIcon={<ArrowRightIcon />}
-          >
-          Add to cart</Button>
+    <ThemeProvider defaultTheme="dark">
+      <ThemeToggle />
+      <div className="max-w-3xl mx-auto p-6 space-y-8">
+        {/* Title */}
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Accordion</h1>
+          <p className="text-neutral-600 dark:text-neutral-400">
+            Accordion komponenti istifadəçilərə məzmunu açıb-bağlamağa imkan
+            verir.
+          </p>
         </div>
-      </main>
+
+        {/* Basic Usage */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Basic istifadə</h2>
+          <Accordion className="rounded-lg">
+            <AccordionHeader>What is React?</AccordionHeader>
+            <AccordionContent>
+              React is a free and open-source front-end JavaScript library for
+              building user interfaces.
+            </AccordionContent>
+          </Accordion>
+        </div>
+
+        {/* Multiple Example */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Multiple items</h2>
+
+          <Accordion className="rounded-lg">
+            <AccordionHeader>What is React?</AccordionHeader>
+            <AccordionContent>
+              React is a JavaScript library for building UI.
+            </AccordionContent>
+          </Accordion>
+
+          <Accordion className="rounded-lg">
+            <AccordionHeader>What is Tailwind CSS?</AccordionHeader>
+            <AccordionContent>
+              Tailwind CSS is a utility-first CSS framework.
+            </AccordionContent>
+          </Accordion>
+        </div>
+
+        {/* Props */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Props</h2>
+
+          <div className="border rounded-lg overflow-hidden">
+            <div className="grid grid-cols-3 bg-neutral-100 dark:bg-neutral-800 p-3 font-medium">
+              <span>Prop</span>
+              <span>Type</span>
+              <span>Description</span>
+            </div>
+
+            <div className="grid grid-cols-3 p-3 border-t">
+              <span>className</span>
+              <span>string</span>
+              <span>Custom styles əlavə etmək üçün</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Code Example */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Code example</h2>
+
+          <pre className="bg-neutral-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+            {`<Accordion>
+  <AccordionHeader>Title</AccordionHeader>
+  <AccordionContent>
+    Content here...
+  </AccordionContent>
+</Accordion>`}
+          </pre>
+        </div>
+      </div>
     </ThemeProvider>
   );
 }
